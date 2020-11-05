@@ -295,18 +295,18 @@ router.all('*', (req, res, next) => {
 router.get('/', async (req, res, next) => {
 	try {
 		let sortFields = {
-			createdAt: 'X.id',
-			username: 'X.username',
-			threadCount: 'threadCount',
-			postCount: 'postCount'
+			createdAt: 'X."id"',
+			username: 'X."username"',
+			threadCount: '"threadCount"',
+			postCount: '"postCount"'
 		};
 		let offset = Number.isInteger(+req.query.offset) ? +req.query.offset : 0;
 		let havingClause = '';
 
 		if(req.query.role === 'admin') {
-			havingClause = 'HAVING Users.admin = true';
+			havingClause = 'HAVING "Users"."admin" = true';
 		} else if(req.query.role === 'user') {
-			havingClause = 'HAVING Users.admin = false';
+			havingClause = 'HAVING "Users"."admin" = false';
 		} else {
 			havingClause = '';
 		}
@@ -320,22 +320,22 @@ router.get('/', async (req, res, next) => {
 				havingClause += ' AND ';
 			}
 
-			havingClause += 'Users.username LIKE $search';
+			havingClause += '"Users"."id" LIKE $search';
 		}
 
 		let sql = `
-			SELECT X.username, X.admin, X.createdAt, X.postCount, COUNT(Threads.id) as threadCount
+			SELECT X."id", X."username", X."admin", X."createdAt", X."postCount", COUNT("Threads"."id") as "threadCount"
 			FROM (
-				SELECT Users.*, COUNT(Posts.id) as postCount
-				FROM Users
-				LEFT OUTER JOIN Posts
-				ON Users.id = Posts.UserId
-				GROUP BY Users.id
+				SELECT "Users".*, COUNT("Posts"."id") as "postCount"
+				FROM "Users"
+				LEFT OUTER JOIN "Posts"
+				ON "Users"."id" = "Posts"."UserId"
+				GROUP BY "Users"."id"
 				${havingClause}
 			) as X
-			LEFT OUTER JOIN threads
-			ON X.id = Threads.UserId
-			GROUP BY X.id
+			LEFT OUTER JOIN "Threads"
+			ON X."id" = "Threads"."UserId"
+			GROUP BY X."id", X."username", X."admin", X."createdAt", X."postCount"
 			ORDER BY ${sortFields[req.query.sort] || 'X.id'} ${req.query.order === 'asc' ? 'ASC' : 'DESC'}
 			LIMIT 15
 			OFFSET ${offset}

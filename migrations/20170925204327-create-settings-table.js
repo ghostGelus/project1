@@ -10,9 +10,13 @@ module.exports = {
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
-      
+
       forumName: Sequelize.STRING,
-      forumDescription: Sequelize.STRING
+      forumDescription: Sequelize.STRING,
+      showDescription: {
+        type: Sequelize.BOOLEAN,
+        defaultValue: false
+      }
     }, {
       charset: 'utf8mb4'
     })

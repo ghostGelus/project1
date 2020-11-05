@@ -46,7 +46,7 @@ router.get('/:category', async (req, res, next) => {
 			}
 
 			if(user) {
-				options.where.userId = user.id
+				options.where.UserId = user.id
 			}
 
 			if(from !== null) {
@@ -97,7 +97,7 @@ router.get('/:category', async (req, res, next) => {
 		})
 
 
-		let nextId = await pagination.getNextIdDesc(Thread, user ? { userId: user.id } : {}, resThreads.Threads)
+		let nextId = await pagination.getNextIdDesc(Thread, user ? { UserId: user.id } : {}, resThreads.Threads)
 
 		if(nextId) {
 			resThreads.meta.nextURL =
@@ -109,7 +109,7 @@ router.get('/:category', async (req, res, next) => {
 
 			resThreads.meta.nextThreadsCount = await pagination.getNextCount(
 				Thread, resThreads.Threads, limit,
-				user ? { userId: user.id } : {},
+				user ? { UserId: user.id } : {},
 				true
 			)
 		} else {

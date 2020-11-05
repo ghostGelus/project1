@@ -20,7 +20,7 @@ router.post('/', async (req, res, next) => {
 		let user = await User.findOne({ where: { username: req.body.username } })
 		if(!user) throw Errors.sequelizeValidation(Sequelize, {
 			error: 'user does not exist',
-			value: req.body.userId
+			value: req.body.UserId
 		})
 
 		let ban = await Ban.create({
@@ -57,7 +57,7 @@ router.delete('/:ban_id', async (req, res, next) => {
 		let ban = await Ban.findById(req.params.ban_id)
 		if(!ban) throw Errors.sequelizeValidation(Sequelize, {
 			error: 'ban does not exist',
-			value: req.body.userId
+			value: req.body.UserId
 		})
 
 		await ban.destroy()

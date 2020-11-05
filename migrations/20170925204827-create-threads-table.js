@@ -10,11 +10,12 @@ module.exports = {
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
-      
+
       name: {
         type: Sequelize.STRING,
         allowNull: false
       },
+      UserId:Sequelize.INTEGER,
       slug: Sequelize.TEXT,
       postsCount: {
         type: Sequelize.INTEGER,

@@ -166,7 +166,7 @@ module.exports = (sequelize, DataTypes) => {
 		let Post = sequelize.models.Post
 		let meta = {}
 
-		let nextId = await pagination.getNextIdDesc(Post, { userId: this.id }, this.Posts)
+		let nextId = await pagination.getNextIdDesc(Post, { UserId: this.id }, this.Posts)
 
 		if(nextId === null) {
 			meta.nextURL = null

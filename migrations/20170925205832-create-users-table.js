@@ -15,6 +15,7 @@ module.exports = {
         type: Sequelize.STRING(191),
         unique: true,
       },
+      picture: Sequelize.TEXT('long'),
       description: Sequelize.TEXT,
       color: Sequelize.TEXT,
       hash: {

@@ -58,6 +58,7 @@ module.exports = (sequelize, DataTypes) => {
 		plainText: DataTypes.TEXT,
 		postNumber: DataTypes.INTEGER,
 		replyingToUsername: DataTypes.STRING,
+		UserId: DataTypes.INTEGER,
 		removed: {
 			type: DataTypes.BOOLEAN,
 			defaultValue: false

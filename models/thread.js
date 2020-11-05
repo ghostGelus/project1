@@ -41,7 +41,8 @@ module.exports = (sequelize, DataTypes) => {
 		locked: {
 			type: DataTypes.BOOLEAN,
 			defaultValue: false
-		}
+		},
+    UserId: DataTypes.INTEGER
 	}, {
 	})
 

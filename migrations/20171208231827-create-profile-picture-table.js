@@ -10,7 +10,8 @@ module.exports = {
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
-      
+      mimetype: Sequelize.STRING,
+
       file: Sequelize.BLOB('long'),
       UserId: Sequelize.INTEGER
     }, {

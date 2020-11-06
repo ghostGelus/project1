@@ -10,13 +10,6 @@ module.exports = {
           color: "#4eabba",
           createdAt: new Date(),
           updatedAt: new Date()
-        },
-        {
-          name: 'music',
-          value: "MUSIC",
-          color: "#4eabba",
-          createdAt: new Date(),
-          updatedAt: new Date()
         }
       ],
       {}

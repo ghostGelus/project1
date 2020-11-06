@@ -27,7 +27,7 @@
 		data () {
 			return {
 				menuItems: [
-					{ name: 'General', route: 'general', icon: 'cog' }, 
+					{ name: 'General', route: 'general', icon: 'cog' },
 					{ name: 'Account', route: 'account', icon: 'lock'},
 				],
 				selected: 0

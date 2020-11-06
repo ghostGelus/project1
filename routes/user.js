@@ -320,7 +320,7 @@ router.get('/', async (req, res, next) => {
 				havingClause += ' AND ';
 			}
 
-			havingClause += '"Users"."id" LIKE $search';
+			havingClause += '"Users"."username" LIKE $search';
 		}
 
 		let sql = `

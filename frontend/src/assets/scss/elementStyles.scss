@@ -131,7 +131,7 @@ b, strong {
 		background-color: $background;
 		border-color: $border;
 		color: $text !important;
-		
+
 		&:hover {
 			background-color: darken($background, 5%);
 			border-color: rgba($border, 0.6);

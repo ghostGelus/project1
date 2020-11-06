@@ -157,7 +157,7 @@
 			</span>
 		</header>
 		<not-found v-show='$store.state.show404Page'></not-found>
-		
+
 		<transition name='fade'>
 			<router-view v-show='!$store.state.show404Page'></router-view>
 		</transition>
@@ -173,7 +173,7 @@
 	import SearchBox from './components/SearchBox'
 
 	import NotFound from './components/routes/NotFound'
-	
+
 	import AjaxErrorHandler from './assets/js/errorHandler'
 
 	export default {
@@ -381,7 +381,7 @@
 			this.axios.get('/api/v1/category')
 				.then(res => {
 					this.$store.commit('addCategories', res.data)
-					
+
 					//Need categories to have loaded to set
 					//the title of the index page
 					//but if we're on another page (i.e. title is not set)
@@ -421,7 +421,7 @@
 		padding: 0;
 
 		color: $color__text--primary;
-		@include text;	
+		@include text;
 	}
 
 	* {
@@ -442,8 +442,9 @@
 	}
 
 	.header {
+
 		width: 100%;
-		padding: 0.5rem 2rem;
+		padding: 0.5rem 8rem;
 		position: fixed;
 		top: 0;
 		z-index: 2;
@@ -452,7 +453,7 @@
 		justify-content: space-between;
 
 		border-bottom: 0.125rem solid $color__gray--primary;
-		background-color: #fff;
+		background-color: white;
 
 		@at-root #{&}__group {
 			display: flex;

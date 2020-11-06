@@ -155,7 +155,7 @@
 			setInteracted (id) {
 				let index = this.getIndexById(id)
 				let item = this.notifications[index]
-				
+
 				this.axios
 					.put('/api/v1/notification/' + id)
 					.then(() => {
@@ -326,7 +326,7 @@
 						background-color: rgba(13, 71, 161, 0.2);
 					}
 				}
-				
+
 				@at-root #{&}__link {
 					font-weight: 400;
 					cursor: pointer;
@@ -485,7 +485,7 @@
 					font-weight: normal;
 				}
 			}
-			
+
 			@at-root #{&}__triangle {
 				left: unset;
 				right: 1.55rem;

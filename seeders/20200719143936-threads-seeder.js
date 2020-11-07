@@ -1,5 +1,6 @@
 'use strict'
 const faker = require('faker/locale/ru')
+let urlSlug = require('url-slug')
 faker.locale = 'ru';
 var questions = [
   '1. How many days do we have in a week?',

@@ -5,6 +5,7 @@ let { sequelize } = require('./models')
 let sockets = require('./lib/sockets')
 
 let config = require('./config/server.js')
+const cors = require('cors')
 
 //Middle-ware
 let bodyParser = require('body-parser')
@@ -26,6 +27,8 @@ if(process.env.NODE_ENV === 'production') {
 	app.set('trust proxy', 1);
 }
 
+app.use(cors("*"))
+app.options('*', cors())
 app.use(helmet())
 app.use(compression())
 app.use(bodyParser.json({ limit: '5mb' }))

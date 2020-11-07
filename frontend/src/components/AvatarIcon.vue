@@ -1,8 +1,8 @@
 <template>
 	<info-tooltip class='avatar_icon' :noEvents='user === null'>
-		
+
 		<template slot='content'>
-			
+
 			<template v-if='userData'>
 				<div class='avatar_icon__header'>
 					<div
@@ -67,7 +67,7 @@
 			//So that you never access a null variable
 			proxyUser () {
 				if(this.userData) {
-					//Data loaded via api 
+					//Data loaded via api
 					return this.userData;
 				} else if (this.user) {
 					//Data provided as a prop
@@ -87,7 +87,7 @@
 				if(this.proxyUser.picture) {
 					return "url(" + this.proxyUser.picture + ")";
 				}
-				
+
 				return null;
 			}
 		},

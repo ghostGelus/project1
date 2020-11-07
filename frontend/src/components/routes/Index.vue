@@ -349,7 +349,7 @@
 			@at-root #{&}__text {
 				filter: saturate(0.75), brightness(0.75);
 			}
-			
+
 
 			@at-root #{&}--selected {
 				font-weight: 600;

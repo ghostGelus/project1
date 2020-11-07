@@ -226,9 +226,7 @@ module.exports = {
           ThreadId: index + 1,
           replyId: null,
           createdAt: new Date(),
-          updatedAt: new Date(),
-          CategoryId: faker.random.number({ min: 1, max: 5 }),
-          viewCounts: 0
+          updatedAt: new Date()
         })
       ), {});
 

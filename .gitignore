@@ -3,7 +3,7 @@
 logs
 *.log
 npm-debug.log*
-
+/frontend
 # Runtime data
 pids
 *.pid

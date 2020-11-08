@@ -43,7 +43,7 @@
 				Once this is done, your account <strong>cannot</strong> be restored <br/>
 				Your current posts however will be retained
 			</p>
-			<loading-button 
+			<loading-button
 				class='button button--red'
 				:loading='deleteAccountLoading'
 				@click='showConfirmModal = true'
@@ -116,8 +116,6 @@
 					.catch(e => {
 						this.password.loading = false
 
-						console.log(e)
-
 						AjaxErrorHandler(this.$store)(e, error => {
 							if(error.path === 'hash') {
 								this.password.errors['new password'] = error.message
@@ -153,7 +151,7 @@
 
 <style lang='scss' scoped>
 	@import '../../assets/scss/variables.scss';
-	
+
 	@media (max-width: $breakpoint--tablet) {
 		.h1 {
 			display: none;

@@ -149,6 +149,12 @@
 						Login
 					</div>
 				</template>
+				<router-link
+					to='/home'
+					class='button button--thin_text'
+				>
+					Main page
+				</router-link>
 				<search-box header-bar='true'></search-box>
 			</div>
 			<div class='header__overlay' :class='{ "header__overlay--show": showMenu }' @click='toggleMenu'></div>

@@ -139,7 +139,7 @@ const actions = {
 
 				vue.$router.replace({ name: 'thread-post', params: {
 					post_number: postNumber || 0,
-					slug: res.data.slug 
+					slug: res.data.slug
 				}});
 
 				if(postNumber !== undefined) {
@@ -181,7 +181,7 @@ const actions = {
 
 						commit('prependPosts', filteredPosts)
 						commit('setPreviousURL', res.data.meta.previousURL)
-						
+
 						if(last) {
 							vue.scrollTo(last.postNumber)
 						}
@@ -204,7 +204,7 @@ const actions = {
 			let baseURL = '/api/v1/thread/' + state.threadId + '?limit=10&from='
 
 			commit('incrementNextPostsCount')
-			
+
 			if(nextURL === null) {
 				commit('setNextURL', baseURL + (post.postNumber-1))
 			}
